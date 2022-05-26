@@ -100,11 +100,11 @@ unittest(test_add_FAIL)
   assertTrue(simon.setSequence(seq, 7));
   for (int i = 0; i < 7; i++)
   {
-    simon.add(i);
+    simon.add(1);  // all wrong codes
     assertEqual(i + 1, simon.length());
     assertFalse(simon.verify());
   }
-  assertTrue(simon.verify());
+  assertFalse(simon.verify());
 }
 
 
