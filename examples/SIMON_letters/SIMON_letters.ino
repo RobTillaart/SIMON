@@ -19,7 +19,8 @@ void setup()
   Serial.print("SIMON_LIB_VERSION:\t");
   Serial.println(SIMON_LIB_VERSION);
 
-  simon.setSequence("Hello", 5);
+  //  casting to (uint8_t *)  prevents warnings.
+  simon.setSequence((uint8_t *)"Hello", 5);
 
   simon.clear();
   simon.add('H');
@@ -37,8 +38,9 @@ void setup()
   simon.add('o');
   Serial.println(simon.verify());  // expect 0
 
-  Serial.println(simon.verify("Hello", 5));  // expect 1
-  Serial.println(simon.verify("hello", 5));  // expect 0
+  //  casting to (uint8_t *)  prevents warnings.
+  Serial.println(simon.verify((uint8_t *)"Hello", 5));  // expect 1
+  Serial.println(simon.verify((uint8_t *)"hello", 5));  // expect 0
 
 }
 
