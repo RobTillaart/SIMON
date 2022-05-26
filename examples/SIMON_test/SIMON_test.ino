@@ -1,7 +1,7 @@
 //
 //    FILE: SIMON_test.ino
 //  AUTHOR: Rob Tillaart
-// PURPOSE: demo - store 2000 dice rolls
+// PURPOSE: test basic functionality
 //    DATE: 2022-05-26
 //     URL: https://github.com/RobTillaart/SIMON
 
@@ -31,6 +31,9 @@ void loop()
 
 void test_1()
 {
+  Serial.println();
+  Serial.println(__FUNCTION__);
+  
   for (int i = 0; i < 8; i++)
   {
     Serial.print(simon.setSequence(seq, i));

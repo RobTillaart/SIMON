@@ -83,15 +83,9 @@ so
 - improve documentation
 - add use of EEPROM to store a sequence over reboots
   - **SIMON(uint16_t EEPROM_ADDR)** constructor with EEPROM address
-
-
-### should 
-
-- add **verify(uint8_t \* array, uint8_t length)**
 - add examples
   - simon says game
   - digital lock
-- add **add(char c)** wrapper, needed?
 
 
 ### could
@@ -102,9 +96,9 @@ so
 - add **bool mastermind(uint8_t \* array, uint8_t &black, uint8_t &white)** compare? (good-wrong_location + good-good_location)
   - class of its own.
   - MM solver and MM 
-- constructor that changes **SIMON_MAXSIZE** ?
+- constructor that changes **SIMON_MAXSIZE** or ?
   - define is OK for now, allows compile time changes.
-  - dynamic allocation of array's
+  - dynamic allocation of array's?
 - add seed value in **generateSequence(..., seedvalue = 0)** 
   for the random generator.
 

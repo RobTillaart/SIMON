@@ -154,7 +154,8 @@ unittest(test_verify)
   assertTrue(simon.setSequence(seq, 7));
   assertTrue(simon.verify(xxx, 7));
   xxx[3] = 0;
-  assertFalse(simon.verify(xxx, 7));}
+  assertFalse(simon.verify(xxx, 7));
+}
 
 
 unittest_main()

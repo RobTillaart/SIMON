@@ -23,7 +23,7 @@ public:
   bool    setSequence(uint8_t * array, uint8_t length);
   //  returns true if success.
   bool    generateSequence(uint8_t length, uint8_t minimum, uint8_t maximum);
-  //  returns the length of the filled array
+  //  returns the length of array (which is filled)
   uint8_t getSequence(uint8_t * array);
 
 
@@ -43,6 +43,7 @@ public:
   uint8_t size();
   //  returns the maximum size of the "hidden" sequence
   uint8_t maxSize();
+
 
 private:
   uint8_t _sequence[SIMON_MAXSIZE];
