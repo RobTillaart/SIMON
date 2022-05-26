@@ -48,7 +48,7 @@ unittest_teardown()
 
 unittest(test_constructor)
 {
-  SIMON simon();
+  SIMON simon;
 
   assertEqual(0, simon.length());
   assertEqual(0, simon.size());
@@ -60,7 +60,7 @@ unittest(test_setSequence)
 {
   uint8_t seq[7] = { 0, 1, 2, 3, 4, 5, 6 };
 
-  SIMON simon();
+  SIMON simon;
   assertEqual(0, simon.size());
   for (int i = 0; i < 8; i++)
   {
@@ -79,7 +79,7 @@ unittest(test_add_OK)
 {
   uint8_t seq[7] = { 0, 1, 2, 3, 4, 5, 6 };
 
-  SIMON simon();
+  SIMON simon;
 
   assertTrue(simon.setSequence(seq, 7));
   for (int i = 0; i < 7; i++)
@@ -95,7 +95,7 @@ unittest(test_add_FAIL)
 {
   uint8_t seq[7] = { 0, 1, 2, 3, 4, 5, 6 };
 
-  SIMON simon();
+  SIMON simon;
 
   assertTrue(simon.setSequence(seq, 7));
   for (int i = 0; i < 7; i++)
@@ -108,8 +108,7 @@ unittest(test_add_FAIL)
 }
 
 
-
-
 unittest_main()
+
 
 // --------
