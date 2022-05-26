@@ -27,7 +27,7 @@ bool SIMON::setSequence(uint8_t * array, uint8_t length)
     _size = 0;
     return false;
   }
-  for (int i = 0; i < length; i++)
+  for (uint8_t i = 0; i < length; i++)
   {
     _sequence[i] = array[i];
   }
@@ -48,7 +48,7 @@ void SIMON::add(uint8_t value)
   {
     _idx = 0;
   }
-  answer[_idx] = value;
+  _answer[_idx] = value;
   _idx++;
 }
 
@@ -56,7 +56,7 @@ void SIMON::add(uint8_t value)
 bool SIMON::verify()
 {
   if (_idx != _size) return false;
-  for (int i = 0; i < _size; i++)
+  for (uint8_t i = 0; i < _size; i++)
   {
     if (_sequence[i] != _answer[i]) return false;
   }
@@ -64,7 +64,7 @@ bool SIMON::verify()
 }
 
 
-uint8_t SIMON::count()
+uint8_t SIMON::length()
 {
   return _idx;
 }

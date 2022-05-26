@@ -1,7 +1,7 @@
 {
   "name": "SIMON",
-  "keywords": "",
-  "description": "Arduino library to build the "Simon says" game or a digital lock.",
+  "keywords": "Simon",
+  "description": "Arduino library to build the 'Simon says' game or a digital lock.",
   "authors":
   [
     {

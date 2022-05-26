@@ -38,6 +38,7 @@ private:
   uint8_t _idx     = 0;
   uint8_t _size    = 0;    //  size of the sequence
   uint8_t _maxSize = 10;
+
 };
 
 
