@@ -50,7 +50,7 @@ unittest(test_constructor)
 {
   SIMON simon();
 
-  assertEqual(0, simon.count());
+  assertEqual(0, simon.length());
   assertEqual(0, simon.size());
   assertTrue(simon.verify());
 }
@@ -85,7 +85,7 @@ unittest(test_add_OK)
   for (int i = 0; i < 7; i++)
   {
     simon.add(i);
-    assertEqual(i, simon.count());
+    assertEqual(i, simon.length());
   }
   assertTrue(simon.verify());
 }
@@ -101,7 +101,7 @@ unittest(test_add_FAIL)
   for (int i = 0; i < 7; i++)
   {
     simon.add(1);
-    assertEqual(i, simon.count());
+    assertEqual(i, simon.length());
     assertFalse(simon.verify());
   }
   assertTrue(simon.verify());
