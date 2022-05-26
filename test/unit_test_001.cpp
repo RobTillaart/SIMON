@@ -85,7 +85,7 @@ unittest(test_add_OK)
   for (int i = 0; i < 7; i++)
   {
     simon.add(i);
-    assertEqual(i, simon.length());
+    assertEqual(i + 1, simon.length());
   }
   assertTrue(simon.verify());
 }
@@ -100,8 +100,8 @@ unittest(test_add_FAIL)
   assertTrue(simon.setSequence(seq, 7));
   for (int i = 0; i < 7; i++)
   {
-    simon.add(1);
-    assertEqual(i, simon.length());
+    simon.add(i);
+    assertEqual(i + 1, simon.length());
     assertFalse(simon.verify());
   }
   assertTrue(simon.verify());
