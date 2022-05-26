@@ -36,7 +36,7 @@ bool SIMON::setSequence(uint8_t * array, uint8_t length)
 }
 
 
-bool SIMON:generateSequence(uint8_t length, uint8_t minimum, uint8_t maximum)
+bool SIMON::generateSequence(uint8_t length, uint8_t minimum, uint8_t maximum)
 {
   if (length > _maxSize)
   {
