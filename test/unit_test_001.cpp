@@ -75,6 +75,42 @@ unittest(test_setSequence)
 }
 
 
+unittest(test_generateSequence)
+
+  uint8_t seq[10];
+
+  SIMON simon;
+  assertEqual(0, simon.size());
+  assertTrue(simon.generateSequence(10, 1, 6));
+
+  int len = simon.getSequence(seq);
+  assertEqual(len, simon.size());
+
+  fprintf(stderr, "%d\t", len);
+  for (int i = 0; i < len; i++)
+  {
+    fprintf(stderr, "%d\t", seq[i]);
+    assertTrue(simon.setSequence(seq, i));
+  }
+  fprintf(stderr, "\n\n");
+}
+
+
+unittest(test_getSequence)
+{
+  uint8_t seq[7] = { 0, 1, 2, 3, 4, 5, 6 };
+  uint8_t xxx[7];
+
+  SIMON simon;
+  assertTrue(simon.setSequence(seq, 7));
+  assertEqual(7, simon.getSequence(xxx));
+  for (uint8_t i = 0; i < 7; i++)
+  {
+    assertEqual(xxx[i], seq[i];
+  };
+}
+
+
 unittest(test_add_OK)
 {
   uint8_t seq[7] = { 0, 1, 2, 3, 4, 5, 6 };
@@ -106,6 +142,19 @@ unittest(test_add_FAIL)
   }
   assertFalse(simon.verify());
 }
+
+
+unittest(test_verify)
+{
+  uint8_t seq[7] = { 0, 1, 2, 3, 4, 5, 6 };
+  uint8_t xxx[7] = { 0, 1, 2, 3, 4, 5, 6 };
+
+  SIMON simon;
+
+  assertTrue(simon.setSequence(seq, 7));
+  assertTrue(simon.verify(xxx, 7));
+  xxx[3] = 0;
+  assertFalse(simon.verify(xxx, 7));}
 
 
 unittest_main()
