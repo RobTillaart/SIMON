@@ -13,7 +13,8 @@ Arduino library to build the "Simon says" game or a digital lock.
 
 ## Description
 
-SIMON is a simple library to make a "Simon says" game. 
+SIMON is a simple library to make a "Simon says" game.
+
 This same class can also be used for e.g. a digital lock
 or access control. 
 
@@ -28,7 +29,7 @@ or access control.
 returns false if count > max size or array == NULL
 - **uint8_t getSequence(uint8_t \* array)** returns length and 
 fills the array with the set sequence.
-- **bool generateSequence(length, minimum, maximum)** generates a
+- **bool generateSequence(uint8_t length, uint8_t minimum, uint8_t maximum)** generates a
 random sequence of given length. 
 Each value is between minimum and maximum inclusive, so ```generateSequence(5, 0, 10);``` may include both 0 and 10.
 Seed for the random function will be **micros()** for now.
@@ -39,7 +40,7 @@ if length becomes too large it is automatically cleared.
 
 
 - **bool verify()** check if answer matches the sequence.
-- **bool verify(uint8_t \* array, uint8_t length)**
+- **bool verify(uint8_t \* array, uint8_t length)** check if array matches the sequence.
 
 
 - **uint8_t length()** returns the length of the answer so far.
@@ -60,7 +61,7 @@ It generates a random sequence and the user must repeat that sequence
 in the same order. If success the length of the sequence is increased
 otherwise decreased.
 
-- see examples (TODO).
+Also the timing can be shortened to make the game more difficult.
 
 
 ### Lock - access control
@@ -72,8 +73,8 @@ If **verify()** returns true, the lock may open, or the access is granted.
 A safer lock won't tell the user the length of the code.
 
 Note that the "secret code" is not encrypted (at least for now)
-so 
-
+so it is not as safe as it can be. 
+For real security other methods are needed.
 
 
 ## Future
@@ -92,14 +93,11 @@ so
 
 - encrypted sequence (one way hash)
   - derived class.
-  - disables **getSequence()** and **size()**
+  - disables **getSequence()** and **size()** and **maxSize()**
 - add **bool mastermind(uint8_t \* array, uint8_t &black, uint8_t &white)** compare? (good-wrong_location + good-good_location)
   - class of its own.
-  - MM solver and MM 
+  - MM solver and MM master
 - constructor that changes **SIMON_MAXSIZE** or ?
   - define is OK for now, allows compile time changes.
   - dynamic allocation of array's?
-- add seed value in **generateSequence(..., seedvalue = 0)** 
-  for the random generator.
-
 
