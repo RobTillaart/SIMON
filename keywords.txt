@@ -1,0 +1,19 @@
+# Syntax Colouring Map For SIMON
+
+
+# Data types (KEYWORD1)
+SIMON	KEYWORD1
+
+
+# Methods and Functions (KEYWORD2)
+setSequence	KEYWORD2
+clear	KEYWORD2
+add	KEYWORD2
+verify	KEYWORD2
+length	KEYWORD2
+size	KEYWORD2
+
+
+# Constants (LITERAL1)
+SIMON_LIB_VERSION	LITERAL1
+
