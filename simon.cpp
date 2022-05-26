@@ -15,8 +15,8 @@
 
 SIMON::SIMON()
 {
-  _idx = 0;
-  _size = 10;
+  _idx  = 0;
+  _size = 0;
 }
 
 
