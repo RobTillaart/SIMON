@@ -76,7 +76,7 @@ unittest(test_setSequence)
 
 
 unittest(test_generateSequence)
-
+{
   uint8_t seq[10];
 
   SIMON simon;
@@ -106,7 +106,7 @@ unittest(test_getSequence)
   assertEqual(7, simon.getSequence(xxx));
   for (uint8_t i = 0; i < 7; i++)
   {
-    assertEqual(xxx[i], seq[i];
+    assertEqual(xxx[i], seq[i]);
   };
 }
 
